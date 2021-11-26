@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="container">
     <h1>はじめてのTODOアプリ</h1>
 
-    <div>
+    <div class="contents">
       <!-- タスクを追加のカード -->
       <add-todo />
 
@@ -37,11 +37,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .card {
   border: 1px solid #999;
   border-radius: 4px;
   max-width: 200px;
   padding: 10px;
+  background-color: #fff;
 
   /* & + & {
     margin-top: 20px;

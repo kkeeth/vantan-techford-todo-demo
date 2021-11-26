@@ -8,6 +8,10 @@
 </template>
 
 <style lang="scss">
+body {
+  background-color: #fafaff;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
