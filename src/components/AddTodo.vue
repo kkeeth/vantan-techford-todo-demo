@@ -3,7 +3,18 @@
     <div class="title">タスクを追加</div>
     <div class="contents-wrapper">
       <input type="text" placeholder="タスクを追加">
-      <button>追加</button>
+      <v-button title="追加" />
     </div>
   </div>
 </template>
+
+<script>
+import VButton from './VButton.vue'
+
+export default {
+  name: 'CompletedTodo',
+  components: {
+    VButton
+  }
+}
+</script>
