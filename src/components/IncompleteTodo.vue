@@ -21,12 +21,10 @@ export default {
   components: {
     VButton,
   },
-  data() {
-    return {
-      todoList: [
-        { title: '牛乳買ってくる', status: false },
-        { title: '髪切る', status: false },
-      ]
+  props: {
+    todoList: {
+      type: Array,
+      required: true
     }
   }
 }

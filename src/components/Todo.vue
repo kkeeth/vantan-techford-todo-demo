@@ -10,7 +10,7 @@
       <completed-todo />
 
       <!-- 未完了タスク -->
-      <incomplete-todo />
+      <incomplete-todo :todo-list="todoList" />
 
       <!-- すべてのタスク -->
       <all-todo />
@@ -33,6 +33,14 @@ export default {
     IncompleteTodo,
     AllTodo,
   },
+  data() {
+    return {
+      todoList: [
+        { title: '牛乳買ってくる', status: false },
+        { title: '髪切る', status: false },
+      ]
+    }
+  }
 }
 </script>
 
