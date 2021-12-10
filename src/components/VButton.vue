@@ -1,5 +1,5 @@
 <template>
-  <button>{{ title }}</button>
+  <button @click="handleClick">{{ title }}</button>
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
     title: {
       type: String,
       required: true,
+    },
+  },
+  methods: {
+    handleClick() {
+      this.$emit("click");
     },
   },
 };

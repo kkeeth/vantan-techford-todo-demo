@@ -4,7 +4,7 @@
 
     <div class="contents">
       <!-- タスクを追加のカード -->
-      <add-todo />
+      <add-todo @addTodo="addNewTodo" />
 
       <!-- 完了済タスク -->
       <completed-todo />
@@ -13,7 +13,7 @@
       <incomplete-todo :todo-list="todoList" />
 
       <!-- すべてのタスク -->
-      <all-todo />
+      <all-todo :todo-list="todoList" @deleteTodo="deleteTodo" />
     </div>
   </div>
 </template>
@@ -37,8 +37,17 @@ export default {
       todoList: [
         { title: "牛乳買ってくる", status: false },
         { title: "髪切る", status: false },
+        { title: "ゴミを捨てる", status: false },
       ],
     };
+  },
+  methods: {
+    addNewTodo(newTodo) {
+      this.todoList.push({
+        title: newTodo,
+        status: false,
+      });
+    },
   },
 };
 </script>
@@ -71,5 +80,11 @@ h1 {
 
 .card + .card {
   margin-top: 20px;
+}
+
+.contents-wrapper {
+  margin-top: 12px;
+  text-align: left;
+  padding-left: 20px;
 }
 </style>

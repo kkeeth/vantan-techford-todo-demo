@@ -2,8 +2,8 @@
   <div class="card">
     <div class="title">タスクを追加</div>
     <div class="contents-wrapper">
-      <input type="text" placeholder="テキストを入力" />
-      <v-button title="追加" />
+      <input v-model="inputTodo" type="text" placeholder="テキストを入力" />
+      <v-button title="追加" @click="addTodo" />
     </div>
   </div>
 </template>
@@ -15,6 +15,16 @@ export default {
   name: "CompletedTodo",
   components: {
     VButton,
+  },
+  data() {
+    return {
+      inputTodo: "",
+    };
+  },
+  methods: {
+    addTodo() {
+      this.$emit("addTodo", this.inputTodo);
+    },
   },
 };
 </script>
