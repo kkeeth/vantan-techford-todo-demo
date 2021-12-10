@@ -48,11 +48,14 @@ export default {
         status: false,
       });
     },
+    deleteTodo() {
+      console.log("delete!!");
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 h1 {
   font-size: 1.5rem;
   font-weight: bold;

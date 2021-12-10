@@ -20,11 +20,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.contents-wrapper {
-  margin-top: 12px;
-  text-align: left;
-  padding-left: 20px;
-}
-</style>

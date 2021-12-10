@@ -30,13 +30,9 @@ export default {
 </script>
 
 <style scoped>
-.contents-wrapper {
-  margin-top: 12px;
-}
-
 .contents-wrapper input {
   border: 2px solid #999;
   border-radius: 8px;
-  padding: 2px 0;
+  padding: 2px 6px;
 }
 </style>
