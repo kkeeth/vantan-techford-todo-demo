@@ -14,19 +14,18 @@
 
       <!-- すべてのタスク -->
       <all-todo />
-
     </div>
   </div>
 </template>
 
 <script>
-import AddTodo from './AddTodo.vue'
-import CompletedTodo from './CompletedTodo.vue'
-import IncompleteTodo from './IncompleteTodo.vue'
-import AllTodo from './AllTodo.vue'
+import AddTodo from "./AddTodo.vue";
+import CompletedTodo from "./CompletedTodo.vue";
+import IncompleteTodo from "./IncompleteTodo.vue";
+import AllTodo from "./AllTodo.vue";
 
 export default {
-  name: 'Todo',
+  name: "Todo",
   components: {
     AddTodo,
     CompletedTodo,
@@ -36,12 +35,12 @@ export default {
   data() {
     return {
       todoList: [
-        { title: '牛乳買ってくる', status: false },
-        { title: '髪切る', status: false },
-      ]
-    }
-  }
-}
+        { title: "牛乳買ってくる", status: false },
+        { title: "髪切る", status: false },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -65,26 +64,12 @@ h1 {
 .card {
   border: 1px solid #999;
   border-radius: 4px;
-  max-width: 200px;
+  min-width: 250px;
   padding: 10px;
   background-color: #fff;
-
-  /* & + & {
-    margin-top: 20px;
-  } */
-
-  /* .contents-wrapper {
-        display: flex;
-        justify-content: center;
-  } */
 }
 
 .card + .card {
   margin-top: 20px;
-}
-
-.contents-wrapper {
-  display: flex;
-  justify-content: center;
 }
 </style>

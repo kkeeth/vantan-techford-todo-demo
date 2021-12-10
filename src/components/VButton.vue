@@ -4,26 +4,23 @@
 
 <script>
 export default {
-  name: 'VButton',
+  name: "VButton",
   props: {
     title: {
       type: String,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 button {
   color: #fff;
   background-color: #eb6100;
-  padding: 4px;
+  padding: 4px 8px;
   border-radius: 8px;
-
-  /* &:hover {
-    background: #f56500;
-  } */
+  margin-left: 5px;
 }
 
 button:hover {

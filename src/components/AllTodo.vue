@@ -3,7 +3,7 @@
     <div class="title">全てのタスク</div>
     <div class="contents-wrapper">
       <ul class="todo-list">
-        <input type="checkbox" value="">
+        <input type="checkbox" value="" />
         <v-button title="削除" />
       </ul>
     </div>
@@ -11,12 +11,18 @@
 </template>
 
 <script>
-import VButton from './VButton.vue'
+import VButton from "./VButton.vue";
 
 export default {
-  name: 'CompletedTodo',
+  name: "CompletedTodo",
   components: {
-    VButton
-  }
-}
+    VButton,
+  },
+};
 </script>
+
+<style scoped>
+.contents-wrapper {
+  margin-top: 12px;
+}
+</style>

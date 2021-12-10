@@ -4,7 +4,7 @@
     <div class="contents-wrapper">
       <ul class="todo-list">
         <li v-for="(item, index) in todoList" :key="index">
-          <input type="checkbox" value="">
+          <input type="checkbox" value="" />
           <span>{{ item.title }}</span>
           <v-button title="削除" />
         </li>
@@ -14,18 +14,24 @@
 </template>
 
 <script>
-import VButton from './VButton.vue'
+import VButton from "./VButton.vue";
 
 export default {
-  name: 'IncompleteTodo',
+  name: "IncompleteTodo",
   components: {
     VButton,
   },
   props: {
     todoList: {
       type: Array,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>
+
+<style scoped>
+.contents-wrapper {
+  margin-top: 12px;
+}
+</style>
