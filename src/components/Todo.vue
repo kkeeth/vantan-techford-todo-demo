@@ -90,4 +90,8 @@ h1 {
   text-align: left;
   padding-left: 20px;
 }
+
+.contents-wrapper input + span {
+  margin-left: 5px;
+}
 </style>
