@@ -4,8 +4,10 @@
     <div class="contents-wrapper">
       <ul class="todo-list">
         <li v-for="(item, index) in todoList" :key="index">
-          <input type="checkbox" value="" />
-          <span>{{ item.title }}</span>
+          <label for="">
+            <input type="checkbox" value="" />
+            <span>{{ item.title }}</span>
+          </label>
           <v-button title="削除" @click="handleDelete(index)" />
         </li>
       </ul>

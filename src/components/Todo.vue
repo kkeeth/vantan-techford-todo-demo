@@ -43,9 +43,9 @@ export default {
   data() {
     return {
       todoList: [
-        { title: "牛乳買ってくる", status: true },
-        { title: "髪切る", status: true },
-        { title: "ゴミを捨てる", status: true },
+        { title: "牛乳買ってくる", status: false },
+        { title: "髪切る", status: false },
+        { title: "ゴミを捨てる", status: false },
       ],
     };
   },
@@ -107,6 +107,7 @@ h1 {
   min-width: 250px;
   padding: 10px;
   background-color: #fff;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .card + .card {
@@ -117,6 +118,16 @@ h1 {
   margin-top: 12px;
   text-align: left;
   padding-left: 20px;
+}
+
+.contents-wrapper li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li + li {
+  margin-top: 10px;
 }
 
 .contents-wrapper input + span {

@@ -32,8 +32,8 @@ export default {
 
 <style scoped>
 .contents-wrapper input {
-  border: 2px solid #999;
-  border-radius: 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
   padding: 2px 6px;
 }
 </style>
