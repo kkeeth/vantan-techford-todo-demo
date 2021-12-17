@@ -3,8 +3,15 @@
     <div class="title">完了済みタスク</div>
     <div class="contents-wrapper">
       <ul class="todo-list">
-        <input type="checkbox" value="" />
-        <v-button title="削除" />
+        <li v-for="(item, index) in todoList" :key="index">
+          <input
+            type="checkbox"
+            :v-model="item.status"
+            @change="changeStatus(index)"
+          />
+          <span>{{ item.title }}</span>
+          <v-button title="削除" @click="handleDelete(index)" />
+        </li>
       </ul>
     </div>
   </div>
@@ -17,6 +24,20 @@ export default {
   name: "CompletedTodo",
   components: {
     VButton,
+  },
+  props: {
+    todoList: {
+      type: Array,
+      required: true,
+    },
+  },
+  methods: {
+    handleDelete(index) {
+      this.$emit("deleteTodo", index);
+    },
+    changeStatus(index) {
+      this.$emit("changeStatus", index);
+    },
   },
 };
 </script>

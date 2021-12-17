@@ -7,10 +7,18 @@
       <add-todo @addTodo="addNewTodo" />
 
       <!-- 完了済タスク -->
-      <completed-todo />
+      <completed-todo
+        :todo-list="completedTodoList"
+        @deleteTodo="deleteTodo"
+        @changeStatus="changeStatus"
+      />
 
       <!-- 未完了タスク -->
-      <incomplete-todo :todo-list="todoList" />
+      <incomplete-todo
+        :todo-list="inCompletedTodoList"
+        @deleteTodo="deleteTodo"
+        @changeStatus="changeStatus"
+      />
 
       <!-- すべてのタスク -->
       <all-todo :todo-list="todoList" @deleteTodo="deleteTodo" />
@@ -35,11 +43,22 @@ export default {
   data() {
     return {
       todoList: [
-        { title: "牛乳買ってくる", status: false },
-        { title: "髪切る", status: false },
-        { title: "ゴミを捨てる", status: false },
+        { title: "牛乳買ってくる", status: true },
+        { title: "髪切る", status: true },
+        { title: "ゴミを捨てる", status: true },
       ],
     };
+  },
+  updated() {
+    console.log(this.inCompletedTodoList);
+  },
+  computed: {
+    completedTodoList() {
+      return this.todoList.filter((item) => item.status);
+    },
+    inCompletedTodoList() {
+      return this.todoList.filter((item) => !item.status);
+    },
   },
   methods: {
     addNewTodo(newTodo) {
@@ -48,8 +67,17 @@ export default {
         status: false,
       });
     },
-    deleteTodo() {
-      console.log("delete!!");
+    deleteTodo(targetIndex) {
+      this.todoList = this.todoList.filter((item, index) => {
+        return index !== targetIndex;
+      });
+    },
+    changeStatus(targetIndex) {
+      this.todoList.forEach((item, index) => {
+        if (index === targetIndex) {
+          item.status = !item.status;
+        }
+      });
     },
   },
 };

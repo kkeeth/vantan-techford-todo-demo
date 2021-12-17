@@ -24,6 +24,7 @@ export default {
   methods: {
     addTodo() {
       this.$emit("addTodo", this.inputTodo);
+      this.inputTodo = "";
     },
   },
 };

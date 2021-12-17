@@ -4,9 +4,13 @@
     <div class="contents-wrapper">
       <ul class="todo-list">
         <li v-for="(item, index) in todoList" :key="index">
-          <input type="checkbox" value="" />
+          <input
+            type="checkbox"
+            :v-model="item.status"
+            @change="changeStatus(index)"
+          />
           <span>{{ item.title }}</span>
-          <v-button title="削除" />
+          <v-button title="削除" @click="handleDelete(index)" />
         </li>
       </ul>
     </div>
@@ -25,6 +29,14 @@ export default {
     todoList: {
       type: Array,
       required: true,
+    },
+  },
+  methods: {
+    handleDelete(index) {
+      this.$emit("deleteTodo", index);
+    },
+    changeStatus(index) {
+      this.$emit("changeStatus", index);
     },
   },
 };
