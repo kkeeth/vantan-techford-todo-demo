@@ -61,10 +61,20 @@ export default {
   },
   methods: {
     addNewTodo(newTodo) {
-      this.todoList.push({
-        title: newTodo,
-        status: false,
+      // 同じ名前のタスクがないか確認
+      const duplicatedCheck = this.todoList.some((item) => {
+        return item.title === newTodo;
       });
+
+      if (duplicatedCheck) {
+        alert("同じ名前のタスクが存在します．");
+        return;
+      } else {
+        this.todoList.push({
+          title: newTodo,
+          status: false,
+        });
+      }
     },
     deleteTodo(targetIndex) {
       this.todoList = this.todoList.filter((item, index) => {
