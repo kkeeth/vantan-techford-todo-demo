@@ -77,7 +77,7 @@ export default {
       }
     },
     deleteTodo(targetIndex) {
-      this.todoList = this.todoList.filter((item, index) => {
+      this.todoList = this.todoList.filter((_item, index) => {
         return index !== targetIndex;
       });
     },
