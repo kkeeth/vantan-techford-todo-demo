@@ -6,7 +6,7 @@
         <li v-for="(item, index) in todoList" :key="item.title">
           <label :for="item.title">
             <input type="checkbox" v-model="item.status" :id="item.title" />
-            <span>{{ item.title }}</span>
+            <span :class="item.status && 'disabled'">{{ item.title }}</span>
           </label>
           <v-button title="削除" @click="handleDelete(index)" />
         </li>

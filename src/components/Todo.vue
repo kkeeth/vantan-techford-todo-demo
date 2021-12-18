@@ -111,8 +111,14 @@ h1 {
   align-items: center;
 }
 
+
 li + li {
   margin-top: 10px;
+}
+
+.contents-wrapper li span.disabled {
+  color: #999;
+  text-decoration: line-through;
 }
 
 .contents-wrapper input + span {
