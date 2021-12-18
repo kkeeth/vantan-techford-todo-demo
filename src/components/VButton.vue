@@ -14,7 +14,7 @@ export default {
       type: Boolean,
       required: false,
       default: false,
-    }
+    },
   },
   methods: {
     handleClick() {
@@ -39,7 +39,7 @@ button:disabled {
 
 button:not(:disabled):hover {
   opacity: 0.7;
-  transition: .3s;
+  transition: 0.3s;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 </style>

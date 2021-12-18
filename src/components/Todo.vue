@@ -52,6 +52,13 @@ export default {
       return this.todoList.filter((item) => !item.status);
     },
   },
+  beforeMount() {
+    // 画面がレンダリングする前に実行
+    this.reStoreItem();
+  },
+  updated() {
+    this.storeItem();
+  },
   methods: {
     addNewTodo(newTodo) {
       this.todoList.push({
@@ -63,6 +70,16 @@ export default {
       this.todoList = this.todoList.filter((item, index) => {
         return index !== targetIndex;
       });
+    },
+    storeItem() {
+      // ローカルストレージにデータを保存
+      localStorage.setItem("todo-list", JSON.stringify(this.todoList));
+    },
+    reStoreItem() {
+      // ローカルストレージからデータを復元
+      if (JSON.parse(localStorage.getItem("todo-list"))) {
+        this.todoList = JSON.parse(localStorage.getItem("todo-list"));
+      }
     },
   },
 };
@@ -110,7 +127,6 @@ h1 {
   justify-content: space-between;
   align-items: center;
 }
-
 
 li + li {
   margin-top: 10px;
