@@ -7,7 +7,7 @@
           <label for="">
             <input
               type="checkbox"
-              :v-model="item.status"
+              v-model="item.status"
               @change="changeStatus(index)"
             />
             <span>{{ item.title }}</span>
