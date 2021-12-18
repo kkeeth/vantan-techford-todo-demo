@@ -3,7 +3,7 @@
     <div class="title">タスクを追加</div>
     <div class="contents-wrapper">
       <input v-model="inputTodo" type="text" placeholder="テキストを入力" />
-      <v-button title="追加" @click="addTodo" />
+      <v-button title="追加" @click="addTodo" :is-disabled="inputTodo.length === 0" />
     </div>
   </div>
 </template>

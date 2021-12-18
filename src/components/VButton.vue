@@ -1,5 +1,5 @@
 <template>
-  <button @click="handleClick">{{ title }}</button>
+  <button @click="handleClick" :disabled="isDisabled">{{ title }}</button>
 </template>
 
 <script>
@@ -10,6 +10,11 @@ export default {
       type: String,
       required: true,
     },
+    isDisabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    }
   },
   methods: {
     handleClick() {
@@ -28,7 +33,11 @@ button {
   margin-left: 5px;
 }
 
-button:hover {
-  background: #f56500;
+button:disabled {
+  background: #999;
+}
+
+button:not(:disabled):hover {
+  opacity: 0.7;
 }
 </style>
