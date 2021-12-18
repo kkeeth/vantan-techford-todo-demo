@@ -7,17 +7,12 @@
       <add-todo @addTodo="addNewTodo" />
 
       <!-- 完了済タスク -->
-      <completed-todo
-        :todo-list="completedTodoList"
-        @deleteTodo="deleteTodo"
-        @changeStatus="changeStatus"
-      />
+      <completed-todo :todo-list="completedTodoList" @deleteTodo="deleteTodo" />
 
       <!-- 未完了タスク -->
       <incomplete-todo
         :todo-list="inCompletedTodoList"
         @deleteTodo="deleteTodo"
-        @changeStatus="changeStatus"
       />
 
       <!-- すべてのタスク -->
@@ -49,9 +44,6 @@ export default {
       ],
     };
   },
-  updated() {
-    console.log(this.inCompletedTodoList);
-  },
   computed: {
     completedTodoList() {
       return this.todoList.filter((item) => item.status);
@@ -70,13 +62,6 @@ export default {
     deleteTodo(targetIndex) {
       this.todoList = this.todoList.filter((item, index) => {
         return index !== targetIndex;
-      });
-    },
-    changeStatus(targetIndex) {
-      this.todoList.forEach((item, index) => {
-        if (index === targetIndex) {
-          item.status = !item.status;
-        }
       });
     },
   },

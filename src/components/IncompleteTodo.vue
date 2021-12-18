@@ -3,13 +3,9 @@
     <div class="title">未完了タスク</div>
     <div class="contents-wrapper">
       <ul class="todo-list">
-        <li v-for="(item, index) in todoList" :key="index">
-          <label for="">
-            <input
-              type="checkbox"
-              v-model="item.status"
-              @change="changeStatus(index)"
-            />
+        <li v-for="(item, index) in todoList" :key="item.title">
+          <label :for="item.title">
+            <input type="checkbox" v-model="item.status" :id="item.title" />
             <span>{{ item.title }}</span>
           </label>
           <v-button title="削除" @click="handleDelete(index)" />
@@ -36,9 +32,6 @@ export default {
   methods: {
     handleDelete(index) {
       this.$emit("deleteTodo", index);
-    },
-    changeStatus(index) {
-      this.$emit("changeStatus", index);
     },
   },
 };

@@ -4,7 +4,7 @@ export const auth = getAuth();
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in
-console.log(userCredential)
+    console.log(userCredential);
     const user = userCredential.user;
     // ...
   })
