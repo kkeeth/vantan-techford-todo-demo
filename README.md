@@ -1,8 +1,8 @@
-# todo-app
+# todo-app-sample
 
 ## Project setup
 ```
-npm install
+npm run install
 ```
 
 ### Compiles and hot-reloads for development
